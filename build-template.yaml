@@ -10,7 +10,7 @@ parameters:
 - name: FROM_IMAGE
   value: quay.io/jkupferer/kopf-s2i:latest
 - name: GIT_REPO
-  value: https://github.com/jkupferer/kopf-s2i.git
+  value: https://github.com/jkupferer/kopf-s2i-example.git
 - name: NAME
   value: kopf-s2i-example
 
