@@ -1,4 +1,4 @@
-= Kopf Source-to-Image Example
+= Python Kopf Source-to-Image Example
 
 == Building
 
@@ -8,17 +8,17 @@
 oc process --local -f build-template.yaml | oc apply -f -
 ------------------------------------------------------------
 
-. Build kopf-s2i-example:
+. Build python-kopf-s2i-example:
 +
 ------------------------------------------------------------
-oc start-build kopf-s2i-example --from-dir=. -F
+oc start-build python-kopf-s2i-example --from-dir=. -F
 ------------------------------------------------------------
 
 . Deploy operator from build image.
 +
 --------------------------------------------------------------------------------
 oc process --local -f deploy-template.yaml \
-  -p IMAGE="$(oc get imagestream kopf-s2i-example -o jsonpath='{.status.tags[?(@.tag=="latest")].items[0].dockerImageReference}')" \
+  -p IMAGE="$(oc get imagestream python-kopf-s2i-example -o jsonpath='{.status.tags[?(@.tag=="latest")].items[0].dockerImageReference}')" \
   -p IMAGE_PULL_POLICY="IfNotPresent" \
 | oc apply -f -
 --------------------------------------------------------------------------------

@@ -3,16 +3,16 @@ apiVersion: template.openshift.io/v1
 kind: Template
 metadata:
   annotations:
-    description: Kopf s2i Example
-  name: kopf-s2i-example
+    description: Python Kopf s2i Example
+  name: python-kopf-s2i-example
 
 parameters:
   - name: NAME
     required: true
-    value: kopf-s2i-example
+    value: python-kopf-s2i-example
   - name: IMAGE
     required: true
-    value: quay.io/jkupferer/kopf-s2i-example:latest
+    value: quay.io/jkupferer/python-kopf-s2i-example:latest
   - name: IMAGE_PULL_POLICY
     required: true
     value: Always
